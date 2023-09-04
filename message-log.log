@@ -1,0 +1,4 @@
+[2023-09-04T19:57:39.857Z] warn: username cannot be empty - Status: 400, Request: {"method":"POST","path":"/users"}
+[2023-09-04T20:16:51.354Z] info: Success Register - Status: 200, Request: {"method":"POST","path":"/users"}
+[2023-09-04T20:17:04.518Z] warn: invalid email format - Status: 400, Request: {"method":"POST","path":"/users"}
+[2023-09-04T20:17:13.466Z] error: This username is already in use - Status: 400, Request: {"method":"POST","path":"/users"}
