@@ -1,21 +1,8 @@
-# Gunakan image Node.js versi 18.16 sebagai dasar
-FROM node:18.16
-
-# Buat direktori aplikasi dalam wadah
-WORKDIR /app
-
-# Salin package.json dan package-lock.json ke dalam wadah
-COPY package*.json ./
-
-# Install dependensi proyek
+FROM node:latest
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app
 RUN npm install
-RUN npm install nodemon -g
-
-# Salin berkas proyek Anda ke dalam wadah
-COPY . .
-
-# Expose port 3000 yang akan digunakan oleh aplikasi Anda
+COPY . /usr/src/app
 EXPOSE 3000
-
-# Perintah untuk menjalankan index.js
-CMD [ "npm", "start" ]
+CMD ["node", "index.js"]
